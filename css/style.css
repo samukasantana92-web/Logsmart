@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+
+    min-height: 100vh;
+    background: #f5f6fa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.background {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #007bff,
+        #001f54
+    );
+
+    z-index: -1;
+
+}
+
+
+
+.container {
+
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.card {
+
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+
+}
+
+
+
+.logo {
+
+    width: 120px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+h1 {
+
+    font-size: 28px;
+
+    color: #111;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+p {
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #007bff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    opacity: 0.9;
+
+}
+
+
+
+.fade {
+
+    animation: aparecer 0.6s ease;
+
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* CARTÕES DE UNIDADES */
+
+.unit-card {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin: 15px 0;
+
+    background: #f8f9fc;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.3s;
+
+    border: 1px solid #eee;
+
+}
+
+
+.unit-card:hover {
+
+    transform: translateY(-4px);
+
+    background: #eef5ff;
+
+}
+
+
+
+.unit-card h3 {
+
+    color: #111;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.unit-card p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+}
+
+
+
+/* CAMPO DE CÓDIGO */
+
+
+input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin: 20px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+
+
+input:focus {
+
+    border-color: #007bff;
+
+}
+
+
+
+/* UNIDADE ESCOLHIDA */
+
+
+.selected-unit {
+
+    background: #f5f7fb;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    margin: 20px 0;
+
+    font-size: 15px;
+
+}
+
+
+
+/* CAIXA DE INFORMAÇÕES */
+
+
+.info-box {
+
+    background: #f5f7fb;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+}
+
+
+.info-box h3 {
+
+    margin-bottom: 15px;
+
+    color: #111;
+
+}
+
+
+
+/* SUCESSO */
+
+
+.check {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #00c853;
+
+    color: white;
+
+    font-size: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* ERRO */
+
+
+.error-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #ff1744;
+
+    color: white;
+
+    font-size: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* LINK DE VOLTAR */
+
+
+.back {
+
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    color: #007bff;
+
+    font-weight: 500;
+
+}
+
+
+
+/* CELULAR */
+
+
+@media(max-width: 500px) {
+
+
+.card {
+
+    padding: 25px;
+
+}
+
+
+h1 {
+
+    font-size: 24px;
+
+}
+
+
+}
+
+/* CARREGAMENTO */
+
+.loader {
+
+    width: 60px;
+
+    height: 60px;
+
+    border: 6px solid #eee;
+
+    border-top: 6px solid #007bff;
+
+    border-radius: 50%;
+
+    margin: 20px auto;
+
+    animation: girar 1s linear infinite;
+
+}
+
+
+@keyframes girar {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+/* IDENTIDADE LOGSMART */
+
+
+body {
+
+    background: linear-gradient(
+        135deg,
+        #0066ff,
+        #001b44
+    );
+
+}
+
+
+
+.card {
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+
+.logo {
+
+    width: 140px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+
+button {
+
+    background: linear-gradient(
+        135deg,
+        #0066ff,
+        #0040aa
+    );
+
+    box-shadow:
+
+    0 8px 20px rgba(0,102,255,0.25);
+
+}
+
+
+
+button:active {
+
+    transform: scale(0.96);
+
+}
+
+
+
+/* TÍTULOS */
+
+h1 {
+
+    font-weight: 700;
+
+}
+
+
+
+/* CAIXAS DE INFORMAÇÃO */
+
+.info-box {
+
+    border: 1px solid #e5e5e5;
+
+}
+
+
+
+.selected-unit {
+
+    border-left: 5px solid #0066ff;
+
+}
+
+/* CARDS DE UNIDADE - NOVO VISUAL */
+
+
+.unit-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    margin: 15px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.unit-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,0.15);
+
+}
+
+
+
+.unit-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #0066ff;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 25px;
+
+}
+
+
+
+.unit-card h3 {
+
+    margin: 0;
+
+    color: #111;
+
+}
+
+
+
+.unit-card p {
+
+    margin: 5px 0 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+/* ACABAMENTO DAS TELAS FINAIS */
+
+
+.success {
+
+    border-top: 6px solid #00c853;
+
+}
+
+
+
+.error {
+
+    border-top: 6px solid #ff1744;
+
+}
+
+
+
+.success h1 {
+
+    color: #00a844;
+
+}
+
+
+
+.error h1 {
+
+    color: #d50000;
+
+}
+
+
+
+.info-box p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* EFEITO DE ENTRADA */
+
+.card {
+
+    animation: subir 0.5s ease;
+
+}
+
+
+
+@keyframes subir {
+
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
