@@ -1225,3 +1225,146 @@ h1 {
     }
 
 }
+
+/* ============================= */
+/* ANIMAÇÃO DE RETIRADA CONCLUÍDA */
+/* ============================= */
+
+.completed {
+
+    border-top: 6px solid #00c853;
+
+}
+
+
+.completed-animation {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+}
+
+
+.completed-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #00c853;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+    box-shadow: 0 10px 30px rgba(0, 200, 83, 0.25);
+
+    animation: completedAppear 0.6s ease-out forwards;
+
+}
+
+
+.completed-title {
+
+    color: #00a844;
+
+    animation: completedContentAppear 0.6s ease-out 0.25s both;
+
+}
+
+
+.completed-subtitle {
+
+    animation: completedContentAppear 0.6s ease-out 0.4s both;
+
+}
+
+
+.completed-info {
+
+    animation: completedContentAppear 0.7s ease-out 0.55s both;
+
+}
+
+
+.completed-message {
+
+    font-size: 14px;
+
+    color: #666;
+
+    animation: completedContentAppear 0.7s ease-out 0.7s both;
+
+}
+
+
+.completed button {
+
+    animation: completedContentAppear 0.7s ease-out 0.85s both;
+
+}
+
+
+@keyframes completedAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform: scale(0.3);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform: scale(1.15);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+@keyframes completedContentAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
