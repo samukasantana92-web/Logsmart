@@ -8,13 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="manifest" href="manifest.json">
+
 <meta name="theme-color" content="#0066ff">
+
 <link rel="icon" href="img/icon-192.png">
 
 <title>LogSmart</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -22,81 +23,79 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
 </head>
 
 
 <body>
 
 
+<!-- TELA DE ABERTURA -->
+
+<div id="splash-screen">
+
+    <img src="img/icon-512.png" alt="LogSmart">
+
+    <h1>LogSmart</h1>
+
+    <p>Rede inteligente de armazenamento e entrega.</p>
+
+</div>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+
 <div class="container">
 
+    <div class="card fade">
 
-<div class="card fade">
+        <img src="img/logo.png" class="logo" alt="Logo LogSmart">
 
+        <h1>LogSmart</h1>
 
-<img src="img/logo.png" class="logo">
+        <p>
+            Rede inteligente de armazenamento e entrega.
+        </p>
 
+        <div class="info-box">
 
-<h1>
+            <p>
+                📦 Retire suas encomendas de forma rápida, segura e inteligente.
+            </p>
 
-LogSmart
+        </div>
 
-</h1>
+        <button onclick="window.location.href='unidades.html'">
 
+            Iniciar retirada
 
-<p>
+        </button>
 
-Rede inteligente de armazenamento e entrega.
+        <p class="back">
 
-</p>
+            Sistema LogSmart © 2026
 
+        </p>
 
-
-<div class="info-box">
-
-
-<p>
-
-📦 Retire suas encomendas de forma rápida, segura e inteligente.
-
-</p>
-
-
-</div>
-
-
-
-<button onclick="window.location.href='unidades.html'">
-
-Iniciar retirada
-
-</button>
-
-
-
-<p class="back">
-
-Sistema LogSmart © 2026
-
-</p>
-
+    </div>
 
 </div>
-
-
-</div>
-
 
 
 <script src="js/script.js"></script>
 
+
 <script>
+
 if ("serviceWorker" in navigator) {
+
     window.addEventListener("load", () => {
+
         navigator.serviceWorker.register("service-worker.js");
+
     });
+
 }
+
 </script>
 
 
