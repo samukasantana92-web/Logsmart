@@ -7,6 +7,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0066ff">
+<link rel="icon" href="img/icon-192.png">
+
 <title>LogSmart</title>
 
 <link rel="stylesheet" href="css/style.css">
@@ -86,6 +90,14 @@ Sistema LogSmart © 2026
 
 
 <script src="js/script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+    });
+}
+</script>
 
 
 </body>
